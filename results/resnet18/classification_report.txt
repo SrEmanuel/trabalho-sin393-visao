@@ -1,0 +1,19 @@
+Modelo: resnet18
+Estrategia de agregacao das metricas: macro e weighted (weighted e a mais adequada, pois as classes sao desbalanceadas)
+
+                          precision    recall  f1-score   support
+
+   bacterial_leaf_blight     0.8077    0.8750    0.8400        72
+   bacterial_leaf_streak     0.8852    0.9474    0.9153        57
+bacterial_panicle_blight     0.8824    0.9000    0.8911        50
+                   blast     0.8849    0.8544    0.8694       261
+              brown_spot     0.8621    0.8621    0.8621       145
+              dead_heart     0.9859    0.9677    0.9767       217
+            downy_mildew     0.6814    0.8280    0.7476        93
+                   hispa     0.9037    0.8243    0.8621       239
+                  normal     0.9444    0.8981    0.9207       265
+                  tungro     0.8492    0.9325    0.8889       163
+
+                accuracy                         0.8860      1562
+               macro avg     0.8687    0.8889    0.8774      1562
+            weighted avg     0.8903    0.8860    0.8870      1562
