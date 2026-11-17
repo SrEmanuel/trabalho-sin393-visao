@@ -105,13 +105,14 @@ Matriz de confusão e exemplos de acertos (linha de cima) e erros (linha de baix
 
 ## Como executar
 
-Há duas formas: localmente, com o `main.py`, ou no Google Colab, com o `main.ipynb`.
+Todo o código está no notebook `main.ipynb`, dividido em células com explicações, e treina os seis modelos em
+sequência. Ele foi feito para o Google Colab, mas também roda localmente com o Jupyter, com dois pequenos ajustes.
 
 ### Requisitos
 
 - Python 3.10 ou superior.
 - Uma GPU NVIDIA é recomendada. O código também roda na CPU, mas o treino fica muito mais lento.
-- Dependências: PyTorch, torchvision, scikit-learn, pandas, NumPy, Matplotlib, seaborn e Pillow
+- Dependências: PyTorch, torchvision, timm, scikit-learn, pandas, NumPy, Matplotlib, seaborn e Pillow
   (lista completa em `requirements.txt`).
 
 ### Localmente
@@ -123,41 +124,44 @@ Há duas formas: localmente, com o `main.py`, ou no Google Colab, com o `main.ip
    cd trabalho-sin393-visao
    ```
 
-2. Crie um ambiente virtual e instale as dependências:
+2. Crie um ambiente com o Anaconda (ou Miniconda) e instale as dependências e o Jupyter:
 
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate        # no Windows: .venv\Scripts\activate
+   conda create -n sin393 python=3.12 -y
+   conda activate sin393
    pip install -r requirements.txt
+   pip install notebook
    ```
 
    O `requirements.txt` instala o PyTorch compilado para **CUDA 13.0**, que exige um driver NVIDIA recente. Com um
-   driver mais antigo, troque `cu130` por `cu128` ou `cu126` na primeira linha do arquivo. Para rodar só na CPU,
-   troque por `cpu`.
+   driver mais antigo, troque `cu130` por `cu128` ou `cu126` na segunda linha do arquivo (a que começa com
+   `--extra-index-url`). Para rodar só na CPU, troque por `cpu`.
 
-3. Escolha o modelo no início do `main.py`:
-
-   ```python
-   MODEL_NAME = "resnet50"  # "mobilenet_v3_small", "mobilenet_v3_large", "resnet18", "resnet50", "convnext_tiny", "convnext_large"
-   ```
-
-4. Execute:
+3. Abra o notebook:
 
    ```bash
-   python main.py
+   jupyter notebook main.ipynb
    ```
 
-   Cada execução treina e avalia um modelo e grava os resultados em `results/<MODEL_NAME>/`. A linha do modelo em
-   `results/metrics_summary.csv` é criada ou substituída, sem apagar as dos outros modelos. Para reproduzir a
-   comparação completa, execute uma vez para cada um dos seis modelos.
+4. Faça dois ajustes, porque o notebook foi escrito para o Colab:
+   - apague (ou comente) a célula da seção **2. Carregamento do dataset**, que monta o Google Drive. Localmente,
+     o dataset já está na pasta `datasets/`;
+   - na seção **14. Executar**, apague a linha `shutil.copytree(...)`, que copia os resultados para o Google Drive.
 
-As demais configurações (épocas, taxas de aprendizado, tamanho do lote, aumento de dados etc.) ficam em constantes
-no início do `main.py`.
+   A célula da seção **1. Preparação do ambiente** pode ser pulada, já que as dependências foram instaladas no
+   passo 2.
+
+5. Execute tudo em **Run → Run All Cells**. A seção **14. Executar** treina os seis modelos em sequência; para
+   treinar só alguns, remova os outros da lista nessa célula.
+
+   Cada modelo grava os resultados em `results/<modelo>/`. A linha do modelo em `results/metrics_summary.csv` é
+   criada ou substituída, sem apagar as dos outros modelos.
+
+As demais configurações (épocas, taxas de aprendizado, tamanho do lote, aumento de dados etc.) ficam na seção
+**4. Configurações** do notebook. No Windows, se o treino travar ou der erro ao carregar os lotes, use
+`NUM_WORKERS = 0` nessa seção.
 
 ### No Google Colab
-
-O notebook `main.ipynb` contém o mesmo código do `main.py`, dividido em células com explicações, e treina os seis
-modelos em sequência.
 
 1. Compacte a pasta `datasets/` em um arquivo `datasets.zip`. Dentro do zip deve estar a própria pasta `datasets/`,
    com as subpastas das classes (no Windows: botão direito na pasta → *Enviar para* → *Pasta compactada*).
