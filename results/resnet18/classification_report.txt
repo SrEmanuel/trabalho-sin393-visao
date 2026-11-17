@@ -3,17 +3,17 @@ Estrategia de agregacao das metricas: macro e weighted (weighted e a mais adequa
 
                           precision    recall  f1-score   support
 
-   bacterial_leaf_blight     0.8077    0.8750    0.8400        72
-   bacterial_leaf_streak     0.8852    0.9474    0.9153        57
-bacterial_panicle_blight     0.8824    0.9000    0.8911        50
-                   blast     0.8849    0.8544    0.8694       261
-              brown_spot     0.8621    0.8621    0.8621       145
-              dead_heart     0.9859    0.9677    0.9767       217
-            downy_mildew     0.6814    0.8280    0.7476        93
-                   hispa     0.9037    0.8243    0.8621       239
-                  normal     0.9444    0.8981    0.9207       265
-                  tungro     0.8492    0.9325    0.8889       163
+   bacterial_leaf_blight     0.9722    0.9722    0.9722        72
+   bacterial_leaf_streak     0.9655    0.9825    0.9739        57
+bacterial_panicle_blight     0.9423    0.9800    0.9608        50
+                   blast     0.9540    0.9540    0.9540       261
+              brown_spot     0.9786    0.9448    0.9614       145
+              dead_heart     0.9954    0.9954    0.9954       217
+            downy_mildew     0.9072    0.9462    0.9263        93
+                   hispa     0.9740    0.9414    0.9574       239
+                  normal     0.9615    0.9434    0.9524       265
+                  tungro     0.9253    0.9877    0.9555       163
 
-                accuracy                         0.8860      1562
-               macro avg     0.8687    0.8889    0.8774      1562
-            weighted avg     0.8903    0.8860    0.8870      1562
+                accuracy                         0.9609      1562
+               macro avg     0.9576    0.9648    0.9609      1562
+            weighted avg     0.9615    0.9609    0.9610      1562

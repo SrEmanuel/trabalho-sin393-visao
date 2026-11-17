@@ -1,0 +1,19 @@
+Modelo: mobilenet_v3_large
+Estrategia de agregacao das metricas: macro e weighted (weighted e a mais adequada, pois as classes sao desbalanceadas)
+
+                          precision    recall  f1-score   support
+
+   bacterial_leaf_blight     0.9444    0.9444    0.9444        72
+   bacterial_leaf_streak     0.9821    0.9649    0.9735        57
+bacterial_panicle_blight     0.9615    1.0000    0.9804        50
+                   blast     0.9401    0.9617    0.9508       261
+              brown_spot     0.9718    0.9517    0.9617       145
+              dead_heart     0.9954    0.9954    0.9954       217
+            downy_mildew     0.9167    0.9462    0.9312        93
+                   hispa     0.9742    0.9498    0.9619       239
+                  normal     0.9729    0.9472    0.9598       265
+                  tungro     0.9527    0.9877    0.9699       163
+
+                accuracy                         0.9635      1562
+               macro avg     0.9612    0.9649    0.9629      1562
+            weighted avg     0.9638    0.9635    0.9635      1562

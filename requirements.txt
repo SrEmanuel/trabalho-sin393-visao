@@ -1,3 +1,5 @@
+# PyTorch com CUDA 13.0 (GPU NVIDIA). Para CPU apenas, troque cu130 por cpu.
+--extra-index-url https://download.pytorch.org/whl/cu130
 timm
 torch
 torchvision

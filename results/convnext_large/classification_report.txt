@@ -1,0 +1,19 @@
+Modelo: convnext_large
+Estrategia de agregacao das metricas: macro e weighted (weighted e a mais adequada, pois as classes sao desbalanceadas)
+
+                          precision    recall  f1-score   support
+
+   bacterial_leaf_blight     0.9859    0.9722    0.9790        72
+   bacterial_leaf_streak     0.9828    1.0000    0.9913        57
+bacterial_panicle_blight     0.9804    1.0000    0.9901        50
+                   blast     0.9586    0.9770    0.9677       261
+              brown_spot     0.9660    0.9793    0.9726       145
+              dead_heart     1.0000    1.0000    1.0000       217
+            downy_mildew     0.9149    0.9247    0.9198        93
+                   hispa     0.9867    0.9331    0.9591       239
+                  normal     0.9811    0.9774    0.9792       265
+                  tungro     0.9583    0.9877    0.9728       163
+
+                accuracy                         0.9731      1562
+               macro avg     0.9715    0.9751    0.9732      1562
+            weighted avg     0.9734    0.9731    0.9731      1562
