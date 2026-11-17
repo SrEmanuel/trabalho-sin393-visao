@@ -89,8 +89,7 @@ Matriz de confusão e exemplos de acertos (linha de cima) e erros (linha de baix
 ## Estrutura do repositório
 
 ```
-├── main.py               # código completo: dados, modelos, treino, avaliação e gráficos
-├── main.ipynb            # o mesmo código em notebook, com explicações e execução dos seis modelos
+├── main.ipynb            # código completo: dados, modelos, treino, avaliação e gráficos
 ├── requirements.txt      # dependências
 ├── datasets/             # imagens, uma subpasta por classe
 └── results/
