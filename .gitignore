@@ -1,0 +1,13 @@
+# pesos dos modelos (arquivos grandes)
+*.pth
+
+# arquivos gerados pelo notebook
+results.zip
+datasets.zip
+.ipynb_checkpoints/
+__pycache__/
+
+# material do artigo (fora do escopo do repositório)
+artigo-novo/
+artigo-original/
+artigo-novo.zip

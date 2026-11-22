@@ -1,0 +1,19 @@
+Modelo: swin_t
+Estrategia de agregacao das metricas: macro e weighted (weighted e a mais adequada, pois as classes sao desbalanceadas)
+
+                          precision    recall  f1-score   support
+
+   bacterial_leaf_blight     0.9718    0.9583    0.9650        72
+   bacterial_leaf_streak     0.9828    1.0000    0.9913        57
+bacterial_panicle_blight     0.9804    1.0000    0.9901        50
+                   blast     0.9405    0.9693    0.9547       261
+              brown_spot     0.9662    0.9862    0.9761       145
+              dead_heart     1.0000    1.0000    1.0000       217
+            downy_mildew     0.9255    0.9355    0.9305        93
+                   hispa     0.9871    0.9582    0.9724       239
+                  normal     0.9884    0.9660    0.9771       265
+                  tungro     0.9877    0.9877    0.9877       163
+
+                accuracy                         0.9744      1562
+               macro avg     0.9730    0.9761    0.9745      1562
+            weighted avg     0.9747    0.9744    0.9744      1562

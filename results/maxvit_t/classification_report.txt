@@ -1,0 +1,19 @@
+Modelo: maxvit_t
+Estrategia de agregacao das metricas: macro e weighted (weighted e a mais adequada, pois as classes sao desbalanceadas)
+
+                          precision    recall  f1-score   support
+
+   bacterial_leaf_blight     0.9571    0.9306    0.9437        72
+   bacterial_leaf_streak     0.9828    1.0000    0.9913        57
+bacterial_panicle_blight     0.9804    1.0000    0.9901        50
+                   blast     0.9442    0.9732    0.9585       261
+              brown_spot     0.9533    0.9862    0.9695       145
+              dead_heart     1.0000    1.0000    1.0000       217
+            downy_mildew     0.9444    0.9140    0.9290        93
+                   hispa     0.9870    0.9498    0.9680       239
+                  normal     0.9770    0.9623    0.9696       265
+                  tungro     0.9759    0.9939    0.9848       163
+
+                accuracy                         0.9712      1562
+               macro avg     0.9702    0.9710    0.9704      1562
+            weighted avg     0.9714    0.9712    0.9711      1562
